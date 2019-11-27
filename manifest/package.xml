@@ -16,14 +16,14 @@
         <members>*</members>
         <name>ApexTestSuite</name>
     </types>-->
-    <types>
+    <!--<types>
         <members>IncidentTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
         <members>BMCServiceDesk__Incident__c</members>
         <name>CustomObject</name>
-    </types>
+    </types>-->
     <!--<types>
         <members>*</members>
         <name>AuraDefinitionBundle</name>
