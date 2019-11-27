@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Select_Impact</fullName>
+    <active>true</active>
+    <description>If &quot;Is something broken&quot; is selected, then an impact needs to be given</description>
+    <errorConditionFormula>AND(ISPICKVAL(Type_of_ticket__c, &quot;Is something broken (used to work but no longer does)&quot;), ISBLANK(   BMCServiceDesk__FKImpact__c ) )</errorConditionFormula>
+    <errorDisplayField>BMCServiceDesk__FKImpact__c</errorDisplayField>
+    <errorMessage>Please select an impact</errorMessage>
+</ValidationRule>

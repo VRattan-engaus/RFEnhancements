@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BMCRF_cannot_select_parent_category</fullName>
+    <active>true</active>
+    <errorConditionFormula>((BMCServiceDesk__FKCategory__r.BMCServiceDesk__Contains_Incident_children_categories__c &gt; 0.0 &amp;&amp; BMCServiceDesk__FKCategory__r.BMCServiceDesk__Contains_Incident_children_categories__c != 0.0)) &amp;&amp;  BMCServiceDesk__Type__c != &#39;Service Request&#39;</errorConditionFormula>
+    <errorMessage>Please choose a sub-category to proceed.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EA_Number_Mandatory</fullName>
+    <active>false</active>
+    <errorConditionFormula>(CONTAINS(  BMCServiceDesk__FKCategory__r.BMCServiceDesk__parentTree__c , &#39;MyPortal&#39;)) &amp;&amp; (ISBLANK( BMCRF_EA_Member_Number__c ) )</errorConditionFormula>
+    <errorMessage>Please Enter Correct EA Member Function...</errorMessage>
+</ValidationRule>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subcategory__c</fullName>
+    <externalId>false</externalId>
+    <label>Type of MyPortalt Issue</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_of_Fault__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Chartered</fullName>
+                <default>false</default>
+                <label>Chartered</label>
+            </value>
+            <value>
+                <fullName>eMembership</fullName>
+                <default>false</default>
+                <label>eMembership</label>
+            </value>
+            <value>
+                <fullName>eStage1</fullName>
+                <default>false</default>
+                <label>eStage1</label>
+            </value>
+            <value>
+                <fullName>National Registration</fullName>
+                <default>false</default>
+                <label>National Registration</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MyPortal</controllingFieldValue>
+            <valueName>Chartered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MyPortal</controllingFieldValue>
+            <valueName>eMembership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MyPortal</controllingFieldValue>
+            <valueName>eStage1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MyPortal</controllingFieldValue>
+            <valueName>National Registration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MyPortal</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

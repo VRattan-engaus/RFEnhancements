@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insert_Details</fullName>
+    <active>true</active>
+    <description>If &quot;Is something broken&quot; is selected, then a description needs to be given</description>
+    <errorConditionFormula>AND(ISPICKVAL(Type_of_ticket__c, &quot;Is something broken (used to work but no longer does)&quot;), ISBLANK(     Details__c ) )</errorConditionFormula>
+    <errorDisplayField>Details__c</errorDisplayField>
+    <errorMessage>Please enter the details</errorMessage>
+</ValidationRule>

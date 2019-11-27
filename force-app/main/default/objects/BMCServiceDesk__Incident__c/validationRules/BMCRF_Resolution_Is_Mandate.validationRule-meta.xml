@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BMCRF_Resolution_Is_Mandate</fullName>
+    <active>true</active>
+    <description>BMCRF_Resolution_Is_Mandate</description>
+    <errorConditionFormula>ISBLANK(BMCServiceDesk__incidentResolution__c) &amp;&amp;  (BMCServiceDesk__Status_ID__c = &#39;Resolved&#39; ||
+BMCServiceDesk__Status_ID__c = &#39;Completed&#39; || BMCServiceDesk__Status_ID__c = &#39;Closed&#39; )</errorConditionFormula>
+    <errorMessage>Please Enter Resolution......</errorMessage>
+</ValidationRule>

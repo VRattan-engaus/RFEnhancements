@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BMCRF_Status_Completed_available_for_SR</fullName>
+    <active>true</active>
+    <errorConditionFormula>BMCServiceDesk__Status_ID__c == &#39;Completed&#39; &amp;&amp; BMCServiceDesk__Type__c == &#39;Incident&#39;</errorConditionFormula>
+    <errorMessage>Completed status only applies for  Service Request, Please select Resolved for Incident.</errorMessage>
+</ValidationRule>

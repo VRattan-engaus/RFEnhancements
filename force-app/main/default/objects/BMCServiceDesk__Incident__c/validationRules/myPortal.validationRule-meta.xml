@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>myPortal</fullName>
+    <active>true</active>
+    <description>if type of fault = myPortal then Type of MyPortal Issue needs to be selected</description>
+    <errorConditionFormula>AND( ISPICKVAL( Type_of_Fault__c, &quot;MyPortal&quot;) , ISBLANK(   TEXT( Subcategory__c )  ) )</errorConditionFormula>
+    <errorDisplayField>Subcategory__c</errorDisplayField>
+    <errorMessage>Please select a MyPortal Issue</errorMessage>
+</ValidationRule>

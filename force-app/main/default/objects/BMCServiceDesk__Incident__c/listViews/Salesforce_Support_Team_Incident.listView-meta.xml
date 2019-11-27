@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Support_Team_Incident</fullName>
+    <columns>NAME</columns>
+    <filterScope>Queue</filterScope>
+    <label>Salesforce Support Team - All Tickets</label>
+    <language>en_US</language>
+    <queue>Salesforce_Support_Team</queue>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

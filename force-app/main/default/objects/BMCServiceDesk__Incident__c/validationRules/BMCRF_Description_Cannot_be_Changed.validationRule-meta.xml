@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BMCRF_Description_Cannot_be_Changed</fullName>
+    <active>true</active>
+    <errorConditionFormula>((BMCServiceDesk__incidentDescription__c != null || BMCServiceDesk__incidentDescription__c !=&#39;&#39;)&amp;&amp;(ISCHANGED( BMCServiceDesk__incidentDescription__c )) &amp;&amp; ISNEW() = False &amp;&amp;  $User.Alias  &lt;&gt; &#39;lgial&#39; &amp;&amp; $User.Alias  &lt;&gt; &#39;ppasc&#39; &amp;&amp; $User.Alias  &lt;&gt; &#39;aadam&#39; &amp;&amp; $User.Alias  &lt;&gt; &#39;rtrew&#39; &amp;&amp; $User.Alias  &lt;&gt; &#39;ajaim&#39; &amp;&amp; $User.Alias  &lt;&gt; &#39;jgoll&#39;)</errorConditionFormula>
+    <errorMessage>You cannot change Incident Description</errorMessage>
+</ValidationRule>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subcategory_1__c</fullName>
+    <externalId>false</externalId>
+    <label>Subcategory</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Subcategory__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assessment</fullName>
+                <default>false</default>
+                <label>Assessment</label>
+            </value>
+            <value>
+                <fullName>Create Application / Add Documents</fullName>
+                <default>false</default>
+                <label>Create Application / Add Documents</label>
+            </value>
+            <value>
+                <fullName>Outcome Submission</fullName>
+                <default>false</default>
+                <label>Outcome Submission</label>
+            </value>
+            <value>
+                <fullName>Submit Additional Information</fullName>
+                <default>false</default>
+                <label>Submit Additional Information</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Chartered</controllingFieldValue>
+            <controllingFieldValue>eMembership</controllingFieldValue>
+            <controllingFieldValue>eStage1</controllingFieldValue>
+            <controllingFieldValue>National Registration</controllingFieldValue>
+            <valueName>Assessment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chartered</controllingFieldValue>
+            <controllingFieldValue>eMembership</controllingFieldValue>
+            <controllingFieldValue>eStage1</controllingFieldValue>
+            <controllingFieldValue>National Registration</controllingFieldValue>
+            <valueName>Create Application / Add Documents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chartered</controllingFieldValue>
+            <controllingFieldValue>eMembership</controllingFieldValue>
+            <controllingFieldValue>eStage1</controllingFieldValue>
+            <controllingFieldValue>National Registration</controllingFieldValue>
+            <valueName>Outcome Submission</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chartered</controllingFieldValue>
+            <controllingFieldValue>eMembership</controllingFieldValue>
+            <controllingFieldValue>eStage1</controllingFieldValue>
+            <controllingFieldValue>National Registration</controllingFieldValue>
+            <valueName>Submit Additional Information</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

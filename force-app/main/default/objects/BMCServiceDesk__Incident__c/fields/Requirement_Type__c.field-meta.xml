@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requirement_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Requirement Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Access to an application (Confluence, Salesforce, myPortal, Webex etc.)</fullName>
+                <default>false</default>
+                <label>Access to an application (Confluence, Salesforce, myPortal, Webex etc.)</label>
+            </value>
+            <value>
+                <fullName>Request for software Installation (MS Project, MS Visio etc)</fullName>
+                <default>false</default>
+                <label>Request for software Installation (MS Project, MS Visio etc)</label>
+            </value>
+            <value>
+                <fullName>Password reset</fullName>
+                <default>false</default>
+                <label>Password reset</label>
+            </value>
+            <value>
+                <fullName>Request for a new email distribution list or amend or delete an existing list</fullName>
+                <default>false</default>
+                <label>Request for a new email distribution list or amend or delete an existing list</label>
+            </value>
+            <value>
+                <fullName>Access to shared folders</fullName>
+                <default>false</default>
+                <label>Shared folder access or ammendments</label>
+            </value>
+            <value>
+                <fullName>Access to a new shared mailbox or a amend or delete an existing mailbox</fullName>
+                <default>false</default>
+                <label>Access to a new or existing shared mailbox</label>
+            </value>
+            <value>
+                <fullName>Access to a user&#39;s mailbox or calendar</fullName>
+                <default>false</default>
+                <label>Access to a user&#39;s mailbox or calendar</label>
+            </value>
+            <value>
+                <fullName>New Employee (employee account creation &amp; asset requirements)</fullName>
+                <default>false</default>
+                <label>New Employee (employee account creation &amp; asset requirements)</label>
+            </value>
+            <value>
+                <fullName>Employee departure (remove all access for a departed employee)</fullName>
+                <default>false</default>
+                <label>Employee departure (remove all access for a departed employee)</label>
+            </value>
+            <value>
+                <fullName>Employee relocating (employee relocating in existing office or to another office)</fullName>
+                <default>false</default>
+                <label>Employee relocating (employee relocating in existing office or to another office)</label>
+            </value>
+            <value>
+                <fullName>Public website Modifications</fullName>
+                <default>false</default>
+                <label>Public website Modifications</label>
+            </value>
+            <value>
+                <fullName>VPN access</fullName>
+                <default>false</default>
+                <label>VPN access</label>
+            </value>
+            <value>
+                <fullName>New hardware (if you have a problem with your existing hardware please click on Is something broken?)</fullName>
+                <default>false</default>
+                <label>New hardware (if you have a problem with your existing hardware please click on Is something broken?)</label>
+            </value>
+            <value>
+                <fullName>BI Data request (reports, lists etc)</fullName>
+                <default>false</default>
+                <label>BI Data request (reports, lists etc)</label>
+            </value>
+            <value>
+                <fullName>Global Roaming (Mobile Phone) Request – Management approval will be required</fullName>
+                <default>false</default>
+                <label>Global Roaming (Mobile Phone) Request – Management approval will be required</label>
+            </value>
+            <value>
+                <fullName>My e=request is not in the above list</fullName>
+                <default>false</default>
+                <label>My request is not in the above list</label>
+            </value>
+            <value>
+                <fullName>Salesforce Request</fullName>
+                <default>false</default>
+                <label>Salesforce request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

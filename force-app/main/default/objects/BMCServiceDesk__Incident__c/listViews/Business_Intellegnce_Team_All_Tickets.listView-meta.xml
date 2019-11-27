@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Intellegnce_Team_All_Tickets</fullName>
+    <columns>NAME</columns>
+    <filterScope>Queue</filterScope>
+    <label>Business Intellegnce Team - All Tickets</label>
+    <language>en_US</language>
+    <queue>Business_Intellegnce_Team</queue>
+</ListView>

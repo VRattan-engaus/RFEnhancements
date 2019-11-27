@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Security_Team_Incident</fullName>
+    <columns>NAME</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>BMCServiceDesk__FKStatus__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>BMCServiceDesk__FKStatus__c</field>
+        <operation>notEqual</operation>
+        <value>Rejected</value>
+    </filters>
+    <filters>
+        <field>BMCServiceDesk__FKStatus__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>BMCServiceDesk__FKStatus__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>BMCServiceDesk__FKStatus__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Security Team - Open Tickets</label>
+    <language>en_US</language>
+    <queue>Security_Team</queue>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

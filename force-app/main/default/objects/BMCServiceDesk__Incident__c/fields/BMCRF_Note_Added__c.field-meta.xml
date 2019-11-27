@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BMCRF_Note_Added__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Used to track if new note got added</description>
+    <externalId>false</externalId>
+    <label>Note Added</label>
+    <referenceTo>BMCServiceDesk__IncidentHistory__c</referenceTo>
+    <relationshipLabel>Incidents</relationshipLabel>
+    <relationshipName>Incidents</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

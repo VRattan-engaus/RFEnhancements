@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BMCRF_Closure_Code_Incident__c</fullName>
+    <externalId>false</externalId>
+    <label>Closure Code</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No user response</fullName>
+                <default>false</default>
+                <label>No user response</label>
+            </value>
+            <value>
+                <fullName>Out of scope</fullName>
+                <default>false</default>
+                <label>Out of scope</label>
+            </value>
+            <value>
+                <fullName>Resolved successfully</fullName>
+                <default>false</default>
+                <label>Resolved successfully</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Unable to replicate</fullName>
+                <default>false</default>
+                <label>Unable to replicate</label>
+            </value>
+            <value>
+                <fullName>Not an Incident</fullName>
+                <default>false</default>
+                <label>Not an Incident</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Problem Raised</fullName>
+                <default>false</default>
+                <label>Problem Raised</label>
+            </value>
+            <value>
+                <fullName>Request completed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Request completed</label>
+            </value>
+            <value>
+                <fullName>Request rejected</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Request rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
