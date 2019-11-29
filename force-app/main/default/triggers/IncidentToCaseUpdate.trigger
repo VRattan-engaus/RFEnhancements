@@ -6,7 +6,7 @@ trigger IncidentToCaseUpdate on BMCServiceDesk__Incident__c (after update) {
     }
     if(Trigger.isBefore && Trigger.isInsert){
         System.debug('Before Insert');
-        //NewIncidentCreateHandler.HandleCreate();
+        NewIncidentCreateHandler.HandleCreate();
         System.debug('Before Insert1');
     
     }
