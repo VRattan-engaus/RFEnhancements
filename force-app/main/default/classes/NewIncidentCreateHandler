@@ -1,8 +1,0 @@
-private class NewIncidentCreateHandler{
-    private static void HandleCreate(List<BMCServiceDesk__Incident__c>newInc){
-
-        System.debug('In HandleCreate');
-        System.debug('newInc >>>' + newInc);
-
-    }
-}
