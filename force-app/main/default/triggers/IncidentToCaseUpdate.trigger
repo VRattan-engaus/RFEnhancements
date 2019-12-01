@@ -1,4 +1,4 @@
-trigger IncidentToCaseUpdate on BMCServiceDesk__Incident__c (after update) {
+trigger IncidentToCaseUpdate on BMCServiceDesk__Incident__c (after update, before insert) {
     public enum triggerAction {beforeInsert, beforeUpdate, beforeDelete, afterInsert, afterUpdate, afterDelete, afterUndelete}
     if(Trigger.isAfter && Trigger.isUpdate){
         System.debug('After Incident updated going to update related case');
