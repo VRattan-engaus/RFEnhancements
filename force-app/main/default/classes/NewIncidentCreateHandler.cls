@@ -18,7 +18,7 @@ public with sharing class NewIncidentCreateHandler {
                     strIncCat = inc.Subcategory__c +' '+'-'+' '+inc.Subcategory_1__c;    
                 }
                 else if(inc.Type_of_Fault__c == 'Cvent' || inc.Type_of_Fault__c != 'Salesforce'){
-                    strIncCat = 'Application - '+ (inc.Type_of_Fault__);
+                    strIncCat = 'Application - '+ (inc.Type_of_Fault__c);
                 }
 
                 System.debug('strIncCat >>' + strIncCat);
