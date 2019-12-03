@@ -17,11 +17,13 @@ public with sharing class NewIncidentCreateHandler {
         Boolean isSR = false;
         String strIncCat = '';
         List<BMCServiceDesk__Category__c> lstIncCat = [Select id, name from BMCServiceDesk__Category__c];
-        Map<Id, BMCServiceDesk__Category__c> mpIncCat = new Map<Id, BMCServiceDesk__Category__c>();
+        //Map yp hold Incident Categories
+        Map<String, BMCServiceDesk__Category__c> mpIncCat = new Map<String, BMCServiceDesk__Category__c>();
+        
 
         //Put Incident Categories into Map
         for(BMCServiceDesk__Category__c cat: lstIncCat){
-            mpIncCat.put(cat.Id,cat);
+            mpIncCat.put(cat.name,cat);
         }
 
         System.debug('Map of Categories >>' + mpIncCat);
@@ -41,8 +43,12 @@ public with sharing class NewIncidentCreateHandler {
                 else if(inc.Type_of_Fault__c == 'Other'){
                     strIncCat = 'Other';
                 }
-
                 System.debug('strIncCat >>' + strIncCat);
+                //Get Category from map based on name
+                inc.BMCServiceDesk__FKCategory__c = mpIncCat.get(strIncCat);
+                 System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                 //Set incident description
+                 inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
             }
             else if((inc.Type_of_ticket__c).contains('Do you Require something')){
                 isSR = true;
