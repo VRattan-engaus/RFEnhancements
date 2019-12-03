@@ -49,7 +49,7 @@ public with sharing class NewIncidentCreateHandler {
                     strIncCat = inc.Type_of_Fault__c;
                 }
                     
-                }
+                
                 System.debug('strIncCat >>' + strIncCat);
                  //System.debug('mpIncCat.get(strIncCat)>>>' + mpIncCat.get(strIncCat));
                 System.debug('mpIncCat.get(strIncCat).Id>>>' + mpIncCat.get(strIncCat));
