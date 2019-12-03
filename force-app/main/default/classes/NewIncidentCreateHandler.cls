@@ -44,6 +44,7 @@ public with sharing class NewIncidentCreateHandler {
                     strIncCat = 'Other';
                 }
                 System.debug('strIncCat >>' + strIncCat);
+                System.debug('mpIncCat.get(strIncCat).Id>>>' + mpIncCat.get(strIncCat).Id);
                 //Get Category from map based on name
                 inc.BMCServiceDesk__FKCategory__c = mpIncCat.get(strIncCat).Id;
                  System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
