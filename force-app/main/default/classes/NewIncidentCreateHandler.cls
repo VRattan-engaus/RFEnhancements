@@ -39,11 +39,16 @@ public with sharing class NewIncidentCreateHandler {
                 if(inc.Type_of_Fault__c == 'MyPortal'){
                     strIncCat = inc.Subcategory__c +' '+'-'+' '+inc.Subcategory_1__c;    
                 }
-                else if(inc.Type_of_Fault__c == 'Cvent' || inc.Type_of_Fault__c != 'Salesforce'){
+                else if(inc.Type_of_Fault__c == 'Cvent' || inc.Type_of_Fault__c == 'Salesforce' || inc.Type_of_Fault__c == 'Connx'){
                     strIncCat = 'Application - '+ (inc.Type_of_Fault__c);
                 }
                 else if(inc.Type_of_Fault__c == 'Other'){
                     strIncCat = 'Other';
+                }
+                else{
+                    strIncCat = inc.Type_of_Fault__c;
+                }
+                    
                 }
                 System.debug('strIncCat >>' + strIncCat);
                  //System.debug('mpIncCat.get(strIncCat)>>>' + mpIncCat.get(strIncCat));
