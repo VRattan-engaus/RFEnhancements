@@ -24,6 +24,8 @@ public with sharing class NewIncidentCreateHandler {
         //Put Incident Categories into Map
         for(BMCServiceDesk__Category__c cat: lstIncCat){
             mpIncCat.put(cat.name,cat);
+            System.debug('cat Id::' + cat.Id);
+            System.debug('cat.name:::' + cat.name);
         }
 
         System.debug('Map of Categories >>' + mpIncCat);
@@ -44,7 +46,8 @@ public with sharing class NewIncidentCreateHandler {
                     strIncCat = 'Other';
                 }
                 System.debug('strIncCat >>' + strIncCat);
-                System.debug('mpIncCat.get(strIncCat).Id>>>' + mpIncCat.get(strIncCat).Id);
+                 //System.debug('mpIncCat.get(strIncCat)>>>' + mpIncCat.get(strIncCat));
+                System.debug('mpIncCat.get(strIncCat).Id>>>' + mpIncCat.get(strIncCat));
                 //Get Category from map based on name
                 inc.BMCServiceDesk__FKCategory__c = mpIncCat.get(strIncCat).Id;
                  System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
