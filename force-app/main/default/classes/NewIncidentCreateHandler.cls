@@ -17,8 +17,11 @@ public with sharing class NewIncidentCreateHandler {
         Boolean isSR = false;
         String strIncCat = '';
         List<BMCServiceDesk__Category__c> lstIncCat = [Select id, name from BMCServiceDesk__Category__c];
-        //Map yp hold Incident Categories
+        List<BMCServiceDesk__Category__c> lstReqDef = [Select id, name from BMCServiceDesk__SRM_RequestDefinition__c];
+        //Map to hold Incident Categories
         Map<String, BMCServiceDesk__Category__c> mpIncCat = new Map<String, BMCServiceDesk__Category__c>();
+        //Map to hold Service Request Definitions
+        Map<String,BMCServiceDesk__SRM_RequestDefinition__c> mpSRDef = new Map<String, BMCServiceDesk__SRM_RequestDefinition__c>();
         
 
         //Put Incident Categories into Map
@@ -26,6 +29,13 @@ public with sharing class NewIncidentCreateHandler {
             mpIncCat.put(cat.name,cat);
             System.debug('cat Id::' + cat.Id);
             System.debug('cat.name:::' + cat.name);
+        }
+
+         //Put Request Definitions into Map
+        for(BMCServiceDesk__Category__c rDef: lstReqDef){
+            mpSRDef.put(rDef.name,rDef);
+            System.debug('rDef Id::' + rDef.Id);
+            System.debug('rDef.name:::' + rDef.name);
         }
 
         System.debug('Map of Categories >>' + mpIncCat);
@@ -61,6 +71,10 @@ public with sharing class NewIncidentCreateHandler {
             }
             else if((inc.Type_of_ticket__c).contains('Do you Require something')){
                 isSR = true;
+                System.debug('Requirement Type >>' + inc.Requirement_Type__c);
+                if((inc.Requirement_Type__c).contains('Access to an application')){
+                    inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Application Access Request').id;
+                }
             }
         }
 
