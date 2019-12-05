@@ -32,7 +32,7 @@ public with sharing class NewIncidentCreateHandler {
         }
 
          //Put Request Definitions into Map
-        for(BMCServiceDesk__Category__c rDef: lstReqDef){
+        for(BMCServiceDesk__SRM_RequestDefinition__c rDef: lstReqDef){
             mpSRDef.put(rDef.name,rDef);
             System.debug('rDef Id::' + rDef.Id);
             System.debug('rDef.name:::' + rDef.name);
