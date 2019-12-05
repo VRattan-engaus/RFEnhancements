@@ -17,7 +17,7 @@ public with sharing class NewIncidentCreateHandler {
         Boolean isSR = false;
         String strIncCat = '';
         List<BMCServiceDesk__Category__c> lstIncCat = [Select id, name from BMCServiceDesk__Category__c];
-        List<BMCServiceDesk__Category__c> lstReqDef = [Select id, name from BMCServiceDesk__SRM_RequestDefinition__c];
+        List<BMCServiceDesk__SRM_RequestDefinition__c> lstReqDef = [Select id, name from BMCServiceDesk__SRM_RequestDefinition__c];
         //Map to hold Incident Categories
         Map<String, BMCServiceDesk__Category__c> mpIncCat = new Map<String, BMCServiceDesk__Category__c>();
         //Map to hold Service Request Definitions
