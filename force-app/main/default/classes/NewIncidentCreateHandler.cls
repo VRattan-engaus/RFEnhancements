@@ -80,6 +80,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Application Access Request').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
                     }
                 }
             }
