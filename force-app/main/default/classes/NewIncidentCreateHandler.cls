@@ -73,7 +73,7 @@ public with sharing class NewIncidentCreateHandler {
                 isSR = true;
                 System.debug('Requirement Type >>' + inc.Requirement_Type__c);
                 if((inc.Requirement_Type__c).contains('Access to an application')){
-                    inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Application Access Request').id;
+                    inc.BMCServiceDesk__FKCategory__c = mpSRDef.get('Application Access Request').id;
                 }
             }
         }
