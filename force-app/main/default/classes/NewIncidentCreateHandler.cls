@@ -63,18 +63,22 @@ public with sharing class NewIncidentCreateHandler {
                 System.debug('strIncCat >>' + strIncCat);
                  //System.debug('mpIncCat.get(strIncCat)>>>' + mpIncCat.get(strIncCat));
                 System.debug('mpIncCat.get(strIncCat).Id>>>' + mpIncCat.get(strIncCat));
-                //Get Category from map based on name
-                inc.BMCServiceDesk__FKCategory__c = mpIncCat.get(strIncCat).Id;
-                 System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                 //Set incident description
-                 inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                if(Trigger.isBefore){
+                    //Get Category from map based on name
+                    inc.BMCServiceDesk__FKCategory__c = mpIncCat.get(strIncCat).Id;
+                    System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                    //Set incident description
+                    inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                }
             }
             else if((inc.Type_of_ticket__c).contains('Do you Require something')){
                 isSR = true;
                 System.debug('Requirement Type >>' + inc.Requirement_Type__c);
                 System.debug('cat ID>>' + mpSRDef.get('Application Access Request').id);
-                if((inc.Requirement_Type__c).contains('Access to an application')){
-                    inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Application Access Request').id;
+                if(Trigger.isBefore){
+                    if((inc.Requirement_Type__c).contains('Access to an application')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Application Access Request').id;
+                    }
                 }
             }
         }
