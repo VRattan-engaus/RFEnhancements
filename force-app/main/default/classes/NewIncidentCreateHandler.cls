@@ -43,7 +43,7 @@ public with sharing class NewIncidentCreateHandler {
         //Looping through the list of new incidents to formulate the incident record to be submitted
         for(BMCServiceDesk__Incident__c inc: newInc){
             System.debug('Type_of_ticket__c >>>' + inc.Type_of_ticket__c);
-            if((inc.Type_of_ticket__c).contains('Is something broken')){
+            if((inc.Type_of_ticket__c!=null) && (inc.Type_of_ticket__c).contains('Is something broken')){
                 isSR = false;
                 System.debug('type of Fault >>' + inc.Type_of_Fault__c);
                 if(inc.Type_of_Fault__c == 'MyPortal'){
@@ -71,7 +71,7 @@ public with sharing class NewIncidentCreateHandler {
                     inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
                 }
             }
-            else if((inc.Type_of_ticket__c).contains('Do you Require something')){
+            else if((inc.Type_of_ticket__c!=null) && (inc.Type_of_ticket__c).contains('Do you Require something')){
                 isSR = true;
                 System.debug('Requirement Type >>' + inc.Requirement_Type__c);
                 System.debug('cat ID>>' + mpSRDef.get('Application Access Request').id);
