@@ -71,7 +71,7 @@ public with sharing class NewIncidentCreateHandler {
                     inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
                 }
             }
-            else if((inc.Type_of_ticket__c).contains('Do you Require something')){
+            else if((inc.Type_of_ticket__c!=null) && (inc.Type_of_ticket__c).contains('Do you Require something')){
                 isSR = true;
                 System.debug('Requirement Type >>' + inc.Requirement_Type__c);
                 System.debug('cat ID>>' + mpSRDef.get('Application Access Request').id);
