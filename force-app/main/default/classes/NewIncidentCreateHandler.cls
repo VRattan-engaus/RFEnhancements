@@ -117,7 +117,7 @@ public with sharing class NewIncidentCreateHandler {
                     //Requirmment Type Access to a new or existing shared mailbox
                     else if((inc.Requirement_Type__c).contains('Access to a new shared mailbox')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Shared mailbox').id;
-                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared mailbox').Id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared Mailbox').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
                     }
