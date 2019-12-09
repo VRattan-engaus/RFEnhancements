@@ -107,6 +107,8 @@ public with sharing class NewIncidentCreateHandler {
                     }
                     //Requirmment Type Shared folder access or ammendments
                     else if((inc.Requirement_Type__c).contains('Shared folder access or ammendments')){
+                        System.debug('For shared folder access');
+                        System.debug('Shared folders access >>>' + mpSRDef.get('Shared folders access').id);
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Shared folders access').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared folder').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
