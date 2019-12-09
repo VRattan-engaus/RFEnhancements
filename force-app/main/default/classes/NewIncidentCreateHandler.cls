@@ -71,14 +71,128 @@ public with sharing class NewIncidentCreateHandler {
                     inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
                 }
             }
-            else if((inc.Type_of_ticket__c!=null) && (inc.Type_of_ticket__c).contains('Do you Require something')){
+            else if((inc.Type_of_ticket__c).contains('Do you Require something')){
                 isSR = true;
                 System.debug('Requirement Type >>' + inc.Requirement_Type__c);
                 System.debug('cat ID>>' + mpSRDef.get('Application Access Request').id);
+                //Set Category, request definition and decription for Service requests
                 if(Trigger.isBefore){
+                    //Requirmment Type Access to an application
                     if((inc.Requirement_Type__c).contains('Access to an application')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Application Access Request').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                    //Requirmment Type Request for software Installation
+                    else if((inc.Requirement_Type__c).contains('Request for software Installation')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Request for Software Installation').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                    //Requirmment Type Password reset
+                    else if((inc.Requirement_Type__c).contains('Password reset')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Passowrd Resets').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                    //Requirmment Type Request for a new email distribution list or amend..
+                    else if((inc.Requirement_Type__c).contains('Request for a new email distribution list or amend')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Email Distribution List').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Distribution list').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                    //Requirmment Type Shared folder access or ammendments
+                    else if((inc.Requirement_Type__c).contains('Shared folder access or ammendments')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Shared folders access').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared folder').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                    //Requirmment Type Access to a new or existing shared mailbox
+                    else if((inc.Requirement_Type__c).contains('Access to a new or existing shared mailbox')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Shared mailbox').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared mailbox').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type Access to a uers's mailbox or calendar
+                    else if((inc.Requirement_Type__c).contains('Access to a uers\'s mailbox or calendar')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Access user mailbox or calendar').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Access user mailbox or calendar').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type New Employee
+                    else if((inc.Requirement_Type__c).contains('New Employee')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('New Employee').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('New Employee').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type Employee Departure
+                    else if((inc.Requirement_Type__c).contains('Employee departure')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Departure').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Departures').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type Employee relocation
+                    else if((inc.Requirement_Type__c).contains('Employee relocation')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Relocation').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Relocation').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Public website modification
+                    else if((inc.Requirement_Type__c).contains('Public website Modifications')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Public Website Modifications').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Public Website Modifications').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type VPN
+                    else if((inc.Requirement_Type__c).contains('VPN access')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('VPN').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('VPN').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type New hardware
+                    else if((inc.Requirement_Type__c).contains('New hardware')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Hardware Request').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Hardware').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type BI Data Request
+                    else if((inc.Requirement_Type__c).contains('BI Data request')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('BI Data Requests').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('BI Data Request').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type Global Roaming
+                    else if((inc.Requirement_Type__c).contains('Global Roaming')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Mobile Phone').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Mobile Phone').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type My request is not in the above list
+                    else if((inc.Requirement_Type__c).contains('My request is not in the above list')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('General Service Request').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('General Request').Id;
+                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                    }
+                     //Requirmment Type My request is not in the above list
+                    else if((inc.Requirement_Type__c).contains('Salesforce request')){
+                        inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Salesforce Request').id;
+                        inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Salesforce').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
                     }
