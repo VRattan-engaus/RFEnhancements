@@ -84,11 +84,12 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Application Access Request').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
+                        //Set decription based on field values
                         if(inc.Application_Type__c !='Other'){
-                            inc.BMCServiceDesk__incidentDescription__c = 'Application Type: ' + inc.Application_Type__c +' \n '+ 'Details: ' + inc.Details__c;
+                            inc.BMCServiceDesk__incidentDescription__c = 'Application Type: ' + inc.Application_Type__c +'\n'+ 'Details: ' + inc.Details__c;
                         }
                         else{
-                            inc.BMCServiceDesk__incidentDescription__c = 'Application Type: ' + inc.Application_Type__c +' \n '+ 'Name of Other Application: '+ inc.Name_of_Other_Application__c + '\n' + 'Details: ' + inc.Details__c;
+                            inc.BMCServiceDesk__incidentDescription__c = 'Application Type: ' + inc.Application_Type__c +'\n'+ 'Name of Other Application: '+ inc.Name_of_Other_Application__c + '\n' + 'Details: ' + inc.Details__c;
                         }
                     }
                     //Requirmment Type Request for software Installation
@@ -96,7 +97,13 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Request for Software Installation').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        //Set description
+                        if(!inc.Software_Requested__c.contains('Other')){
+                            inc.BMCServiceDesk__incidentDescription__c = 'Software Requested: '+ inc.Software_Requested__c + '\n' +'Additional Information: '+  inc.Additional_Information__c;
+                        }
+                        else{
+                            inc.BMCServiceDesk__incidentDescription__c = 'Software Requested: '+ inc.Software_Requested__c + '\n' + 'Name of Software Needed: ' + inc.Name_of_Software_Needed__c  +'\n' +'Additional Information: '+  inc.Additional_Information__c;
+                        }
                     }
                     //Requirmment Type Password reset
                     else if((inc.Requirement_Type__c).contains('Password reset')){
