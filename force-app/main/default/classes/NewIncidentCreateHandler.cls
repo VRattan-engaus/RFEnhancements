@@ -74,7 +74,8 @@ public with sharing class NewIncidentCreateHandler {
             else if((inc.Type_of_ticket__c!=null) && (inc.Type_of_ticket__c).contains('Do you Require something')){
                 isSR = true;
                 System.debug('Requirement Type >>' + inc.Requirement_Type__c);
-                System.debug('contains req type>>>' + (inc.Requirement_Type__c).contains(String.escapeSingleQuotes('Access to a uers\'s mailbox or calendar')));
+                System.debug('contains req type>>>' + (inc.Requirement_Type__c).contains('Access to a users\'s mailbox or calendar'));
+                System.debug('contains req type2>>>' + (inc.Requirement_Type__c).contains(String.escapeSingleQuotes('Access to a users\'s mailbox or calendar')));
                 System.debug('cat ID>>' + mpSRDef.get('Application Access Request').id);
                 //Set Category, request definition and decription for Service requests
                 if(Trigger.isBefore){
@@ -123,7 +124,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
                     }
                      //Requirmment Type Access to a uers's mailbox or calendar
-                    else if((inc.Requirement_Type__c).contains('Access to a uers\'s mailbox or calendar')){
+                    else if((inc.Requirement_Type__c).contains('Access to a users\'s mailbox or calendar')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Access user mailbox or calendar').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Access user mailbox or calendar').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
