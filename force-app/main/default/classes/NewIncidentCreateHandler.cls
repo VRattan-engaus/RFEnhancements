@@ -98,7 +98,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         //Set description
-                        if(!inc.Software_Requested__c.contains('Other')){
+                        if((inc.Software_Requested__c !=null) && (!inc.Software_Requested__c.contains('Other'))){
                             inc.BMCServiceDesk__incidentDescription__c = 'Software Requested: '+ inc.Software_Requested__c + '\n' +'Additional Information: '+  inc.Additional_Information__c;
                         }
                         else{
