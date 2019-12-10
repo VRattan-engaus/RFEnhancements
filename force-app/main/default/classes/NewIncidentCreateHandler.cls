@@ -145,7 +145,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
                     }
                      //Requirmment Type Employee relocation
-                    else if((inc.Requirement_Type__c).contains('Employee relocation')){
+                    else if((inc.Requirement_Type__c).contains('Employee relocating')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Relocation').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Relocation').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
