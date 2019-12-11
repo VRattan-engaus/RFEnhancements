@@ -93,7 +93,7 @@ public with sharing class NewIncidentCreateHandler {
                         }
                     }
                     //Requirmment Type Request for software Installation
-                    else if((inc.Requirement_Type__c).contains('Request for software Installation')){
+                    else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Request for software Installation')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Request for Software Installation').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
