@@ -74,8 +74,8 @@ public with sharing class NewIncidentCreateHandler {
             else if((inc.Type_of_ticket__c!=null) && (inc.Type_of_ticket__c).contains('Do you Require something')){
                 isSR = true;
                 System.debug('Requirement Type >>' + inc.Requirement_Type__c);
-                System.debug('contains req type>>>' + (inc.Requirement_Type__c).contains('Access to a user\'s mailbox or calendar'));
-                System.debug('contains req type2>>>' + (inc.Requirement_Type__c).contains(String.escapeSingleQuotes('Access to a user\'s mailbox or calendar')));
+                //System.debug('contains req type>>>' + (inc.Requirement_Type__c).contains('Access to a user\'s mailbox or calendar'));
+                //System.debug('contains req type2>>>' + (inc.Requirement_Type__c).contains(String.escapeSingleQuotes('Access to a user\'s mailbox or calendar')));
                 System.debug('cat ID>>' + mpSRDef.get('Application Access Request').id);
                 //Set Category, request definition and decription for Service requests
                 if(Trigger.isBefore){
