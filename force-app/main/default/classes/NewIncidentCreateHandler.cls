@@ -80,7 +80,7 @@ public with sharing class NewIncidentCreateHandler {
                 //Set Category, request definition and decription for Service requests
                 if(Trigger.isBefore){
                     //Requirmment Type Access to an application
-                    if((inc.Requirement_Type__c).contains('Access to an application')){
+                    if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Access to an application')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Application Access Request').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
