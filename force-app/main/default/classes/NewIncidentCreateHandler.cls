@@ -110,7 +110,13 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Password Resets').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Application').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        //Set description
+                        if((inc.Application_Type__c !=null) && (inc.Application_Type__c!='Other')){
+                            inc.BMCServiceDesk__incidentDescription__c = 'Application Type: ' + inc.Application_Type__c + '\n' + 'Details: ' + inc.Details__c;
+                        }
+                        else{
+                            inc.BMCServiceDesk__incidentDescription__c = 'Application Type: ' + inc.Application_Type__c + '\n'+ 'Name of Other Application: '+ inc.Name_of_Other_Application__c +'\n' + 'Details: ' + inc.Details__c;
+                        }
                     }
                     //Requirmment Type Request for a new email distribution list or amend..
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Request for a new email distribution list or amend')){
