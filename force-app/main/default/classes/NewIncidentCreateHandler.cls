@@ -124,7 +124,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Distribution list').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         //Set description
-                        inc.BMCServiceDesk__incidentDescription__c = 'Type of request for distribution list: '+ inc.Type_of_request_for_distribution_list__c + '\n' + inc.Name_of_Distribution_List__c + '\n' + inc.Additional_Information__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Type of request for distribution list: '+ inc.Type_of_request_for_distribution_list__c + '\n' + 'Name of distribution list: '+ inc.Name_of_Distribution_List__c + '\n' + 'Additional Information: ' + inc.Additional_Information__c;
                     }
                     //Requirmment Type Shared folder access or ammendments
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Access to shared folders')){
@@ -140,7 +140,8 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Shared mailbox').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared Mailbox').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        //Set description
+                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ inc.Employee__c + '\n' + 'Employee Manager: ' +'\n' + inc.Manager__c + '\n' + 'Full Path: ' + inc.Full_path_name__c + 'Additional Information: ' + inc.Additional_Information__c;
                     }
                      //Requirmment Type Access to a uers's mailbox or calendar
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Access to a user\'s mailbox or calendar')){
