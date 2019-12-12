@@ -132,8 +132,9 @@ public with sharing class NewIncidentCreateHandler {
                         System.debug('Shared folders access >>>' + mpSRDef.get('Shared folders access').id);
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Shared folders access').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared folder').Id;
-                        System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        //Set description
+                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ inc.Employee__c + '\n' + 'Employee Manager: ' +'\n' + inc.Manager__c + '\n' + 'Full Path: ' + inc.Full_path_name__c + 'Additional Information: ' + inc.Additional_Information__c;
+                        
                     }
                     //Requirmment Type Access to a new or existing shared mailbox
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Access to a new shared mailbox')){
