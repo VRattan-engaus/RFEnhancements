@@ -23,7 +23,7 @@ public with sharing class NewIncidentCreateHandler {
         Map<String, BMCServiceDesk__Category__c> mpIncCat = new Map<String, BMCServiceDesk__Category__c>();
         //Map to hold Service Request Definitions
         Map<String,BMCServiceDesk__SRM_RequestDefinition__c> mpSRDef = new Map<String, BMCServiceDesk__SRM_RequestDefinition__c>();
-        Map<Id,String> mpEmpDtls = new Map<String, BMCServiceDesk__SRM_RequestDefinition__c>();
+        Map<Id,String> mpEmpDtls = new Map<String, String>();
 
         For(User u: lstUser){
             mpEmpDtls.put(u.Id, u.name);
