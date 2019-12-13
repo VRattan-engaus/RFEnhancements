@@ -18,10 +18,16 @@ public with sharing class NewIncidentCreateHandler {
         String strIncCat = '';
         List<BMCServiceDesk__Category__c> lstIncCat = [Select id, name from BMCServiceDesk__Category__c];
         List<BMCServiceDesk__SRM_RequestDefinition__c> lstReqDef = [Select id, name from BMCServiceDesk__SRM_RequestDefinition__c];
+        List<User> lstUser = [Select id,name from User];
         //Map to hold Incident Categories
         Map<String, BMCServiceDesk__Category__c> mpIncCat = new Map<String, BMCServiceDesk__Category__c>();
         //Map to hold Service Request Definitions
         Map<String,BMCServiceDesk__SRM_RequestDefinition__c> mpSRDef = new Map<String, BMCServiceDesk__SRM_RequestDefinition__c>();
+        Map<Id,String> mpEmpDtls = new Map<String, BMCServiceDesk__SRM_RequestDefinition__c>();
+
+        For(User u: lstUser){
+            mpEmpDtls.put(u.Id, u.name);
+        }
         
 
         //Put Incident Categories into Map
@@ -133,7 +139,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Shared folders access').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared folder').Id;
                         //Set description
-                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ inc.Employee__c + '\n' + 'Employee Manager: ' +'\n' + inc.Manager__c + '\n' + 'Full Path: ' + inc.Full_path_name__c + 'Additional Information: ' + inc.Additional_Information__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ mpEmpDtls.get(inc.Employee__c) + '\n' + 'Employee Manager: ' +'\n' + mpEmpDtls.get(inc.Manager__c) + '\n' + 'Full Path: ' + inc.Full_path_name__c + 'Additional Information: ' + inc.Additional_Information__c;
                         
                     }
                     //Requirmment Type Access to a new or existing shared mailbox
