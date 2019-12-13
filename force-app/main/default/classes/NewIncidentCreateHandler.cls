@@ -139,7 +139,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Shared folders access').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared folder').Id;
                         //Set description
-                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ mpEmpDtls.get(inc.Employee__c) + '\n' + 'Employee Manager: ' +'\n' + mpEmpDtls.get(inc.Manager__c) + '\n' + 'Full Path: ' + inc.Full_path_name__c + 'Additional Information: ' + inc.Additional_Information__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ mpEmpDtls.get(inc.Employee__c) + '\n' + 'Employee Manager: ' + mpEmpDtls.get(inc.Manager__c) + '\n' + 'Full Path: ' + inc.Full_path_name__c + '\n' + 'Additional Information: ' + inc.Additional_Information__c;
                         
                     }
                     //Requirmment Type Access to a new or existing shared mailbox
@@ -148,14 +148,15 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared Mailbox').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         //Set description
-                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ inc.Employee__c + '\n' + 'Employee Manager: ' +'\n' + inc.Manager__c + '\n' + 'Full Path: ' + inc.Full_path_name__c + 'Additional Information: ' + inc.Additional_Information__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Type of Request: '+ inc.Type_of_Request__c + '\n' + 'Who requires access to the mailbox?: ' +'\n' + inc.Who_requires_access_to_shared_mailbox__c + '\n' + 'Who is the owner of the mailbox?: ' + inc.Who_is_the_owner_of_shared_mailbox__c + '\n' +'Details: ' + inc.Details__c;
                     }
                      //Requirmment Type Access to a uers's mailbox or calendar
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Access to a user\'s mailbox or calendar')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Access user mailbox or calendar').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Access user mailbox or calendar').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        //Set description
+                        inc.BMCServiceDesk__incidentDescription__c = 'Who requires access to the mailbox?: '+ inc.Who_requires_access_to_shared_mailbox__c  + '\n' + 'Who is the owner of the mailbox?: ' +'\n' + inc.Who_is_the_owner_of_shared_mailbox__c + '\n' +'Details: ' + inc.Details__c;
                     }
                      //Requirmment Type New Employee
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('New Employee')){
