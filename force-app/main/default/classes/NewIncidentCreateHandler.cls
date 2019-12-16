@@ -148,7 +148,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Shared Mailbox').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         //Set description
-                        inc.BMCServiceDesk__incidentDescription__c = 'Type of Request: '+ inc.Type_of_Request__c + '\n' + 'Who requires access to the mailbox?: ' +'\n' + inc.Who_requires_access_to_shared_mailbox__c + '\n' + 'Who is the owner of the mailbox?: ' + mpEmpDtls.get(inc.Who_is_the_owner_of_shared_mailbox__c) + '\n' +'Details: ' + inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Type of Request: '+ inc.Type_of_Request__c + '\n' + 'Who requires access to the mailbox?: ' + inc.Who_requires_access_to_shared_mailbox__c + '\n' + 'Who is the owner of the mailbox?: ' + mpEmpDtls.get(inc.Who_is_the_owner_of_shared_mailbox__c) + '\n' +'Details: ' + inc.Details__c;
                     }
                      //Requirmment Type Access to a uers's mailbox or calendar
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Access to a user\'s mailbox or calendar')){
@@ -156,14 +156,27 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Access user mailbox or calendar').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         //Set description
-                        inc.BMCServiceDesk__incidentDescription__c = 'Who requires access to the mailbox?: '+ inc.Who_requires_access_to_shared_mailbox__c  + '\n' + 'Who is the owner of the mailbox?: ' +'\n' + mpEmpDtls.get(inc.Who_is_the_owner_of_shared_mailbox__c) + '\n' +'Details: ' + inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Who requires access to the mailbox?: '+ inc.Who_requires_access_to_shared_mailbox__c  + '\n' + 'Who is the owner of the mailbox?: ' + mpEmpDtls.get(inc.Who_is_the_owner_of_shared_mailbox__c) + '\n' +'Details: ' + inc.Details__c;
                     }
                      //Requirmment Type New Employee
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('New Employee')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('New Employee').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('New Employee').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'New employee name: '+ New_employee_name__c +'\n'+ 'Company: ' +  Company__c + '\n' 
+                                                                     + 'Position Type: ' + Position_Type__c + '\n' +'Position Title: ' + Position_Title__c
+                                                                     + '\n' + 'Employee Manager: ' + Manager__c + '\n' + 'Commencement Date: ' + Commencement_Date__c
+                                                                     + '\n' + 'Location: ' + Location__c + '\n' + 'System Access: ' + System_Access__c + '\n'
+                                                                     + 'Additional Access Required: ' + Additional_Access_Required__c +'\n' + 'Additional Access: '
+                                                                     + Additional_Access__c + '\n' + 'Access to shared mailbox required: ' + Does_new_employee_require_access_to_a_sh__c
+                                                                     + '\n' + 'Add to additional distribution list: '+ Add_to_additional_distribution_list__c + '\n'
+                                                                     + 'Details of distribution list: ' + Details_distribution_list__c + '\n' + 'Laptop set-up required: '
+                                                                     + Does_new_employee_require_a_laptop_set_u__c + '\n' + 'Details for laptop setup: ' + Details_for_laptop_setup__c
+                                                                     + '\n' + 'Does new employee require a mobile phone: ' + Does_new_employee_require_a_mobile_phone__c + '\n'
+                                                                     + 'Details: ' + Details__c ;
+
+
+
                     }
                      //Requirmment Type Employee Departure
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Employee departure')){
