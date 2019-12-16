@@ -163,17 +163,17 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('New Employee').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('New Employee').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = 'New employee name: '+ New_employee_name__c +'\n'+ 'Company: ' +  Company__c + '\n' 
-                                                                     + 'Position Type: ' + Position_Type__c + '\n' +'Position Title: ' + Position_Title__c
-                                                                     + '\n' + 'Employee Manager: ' + Manager__c + '\n' + 'Commencement Date: ' + Commencement_Date__c
-                                                                     + '\n' + 'Location: ' + Location__c + '\n' + 'System Access: ' + System_Access__c + '\n'
-                                                                     + 'Additional Access Required: ' + Additional_Access_Required__c +'\n' + 'Additional Access: '
-                                                                     + Additional_Access__c + '\n' + 'Access to shared mailbox required: ' + Does_new_employee_require_access_to_a_sh__c
-                                                                     + '\n' + 'Add to additional distribution list: '+ Add_to_additional_distribution_list__c + '\n'
-                                                                     + 'Details of distribution list: ' + Details_distribution_list__c + '\n' + 'Laptop set-up required: '
-                                                                     + Does_new_employee_require_a_laptop_set_u__c + '\n' + 'Details for laptop setup: ' + Details_for_laptop_setup__c
-                                                                     + '\n' + 'Does new employee require a mobile phone: ' + Does_new_employee_require_a_mobile_phone__c + '\n'
-                                                                     + 'Details: ' + Details__c ;
+                        inc.BMCServiceDesk__incidentDescription__c = 'New employee name: '+ inc.New_employee_name__c +'\n'+ 'Company: ' +  inc.Company__c + '\n' 
+                                                                     + 'Position Type: ' + inc.Position_Type__c + '\n' +'Position Title: ' + inc.Position_Title__c
+                                                                     + '\n' + 'Employee Manager: ' + inc.Manager__c + '\n' + 'Commencement Date: ' + inc.Commencement_Date__c
+                                                                     + '\n' + 'Location: ' + inc.Location__c + '\n' + 'System Access: ' + inc.System_Access__c + '\n'
+                                                                     + 'Additional Access Required: ' + inc.Additional_Access_Required__c +'\n' + 'Additional Access: '
+                                                                     + inc.Additional_Access__c + '\n' + 'Access to shared mailbox required: ' + inc.Does_new_employee_require_access_to_a_sh__c
+                                                                     + '\n' + 'Add to additional distribution list: '+ inc.Add_to_additional_distribution_list__c + '\n'
+                                                                     + 'Details of distribution list: ' + inc.Details_distribution_list__c + '\n' + 'Laptop set-up required: '
+                                                                     + inc.Does_new_employee_require_a_laptop_set_u__c + '\n' + 'Details for laptop setup: ' + inc.Details_for_laptop_setup__c
+                                                                     + '\n' + 'Does new employee require a mobile phone: ' + inc.Does_new_employee_require_a_mobile_phone__c + '\n'
+                                                                     + 'Details: ' + inc.Details__c ;
 
 
 
