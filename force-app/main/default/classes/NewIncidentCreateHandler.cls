@@ -183,8 +183,8 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Departure').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Departures').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: ' + mpEmpDtls.get(Employee__c) + '\n' + 'Department: ' + inc.Department_Emp__c+'\n' 
-                        + 'Company: ' + inc.Company__c + '\n' + 'Location: ' + inc.Location__c + '\n' + 'Employee Manager: ' + mpEmpDtls.get(Manager__c) + '\n' 
+                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: ' + mpEmpDtls.get(inc.Employee__c) + '\n' + 'Department: ' + inc.Department_Emp__c+'\n' 
+                        + 'Company: ' + inc.Company__c + '\n' + 'Location: ' + inc.Location__c + '\n' + 'Employee Manager: ' + mpEmpDtls.get(inc.Manager__c) + '\n' 
                         + 'Last Working Day: ' + inc.Last_Working_Day__c + '\n' + 'Additional Information: ' + inc.Additional_Information__c + '\n'
                         + 'Asset Type: ' + inc.Asset_type__c + '\n' + 'Other allocated asstes?: ' + inc.Other_allocated_assets__c;
 
