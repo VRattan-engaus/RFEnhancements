@@ -165,7 +165,7 @@ public with sharing class NewIncidentCreateHandler {
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         inc.BMCServiceDesk__incidentDescription__c = 'New employee name: '+ inc.New_employee_name__c +'\n'+ 'Company: ' +  inc.Company__c + '\n' 
                                                                      + 'Position Type: ' + inc.Position_Type__c + '\n' +'Position Title: ' + inc.Position_Title__c
-                                                                     + '\n' + 'Employee Manager: ' + inc.Manager__c + '\n' + 'Commencement Date: ' + inc.Commencement_Date__c
+                                                                     + '\n' + 'Employee Manager: ' + mpEmpDtls.get(inc.Manager__c) + '\n' + 'Commencement Date: ' + inc.Commencement_Date__c
                                                                      + '\n' + 'Location: ' + inc.Location__c + '\n' + 'System Access: ' + inc.System_Access__c + '\n'
                                                                      + 'Additional Access Required: ' + inc.Additional_Access_Required__c +'\n' + 'Additional Access: '
                                                                      + inc.Additional_Access__c + '\n' + 'Access to shared mailbox required: ' + inc.Does_new_employee_require_access_to_a_sh__c
