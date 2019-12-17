@@ -236,7 +236,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Mobile Phone').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Mobile Phone').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Details: ' + inc.Details__c;
                     }
                      //Requirmment Type My request is not in the above list
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('My request is not in the above list')){
