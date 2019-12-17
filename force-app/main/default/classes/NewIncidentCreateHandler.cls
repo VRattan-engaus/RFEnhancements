@@ -205,7 +205,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Public Website Modifications').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Public Website Modifications').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Details: ' + inc.Details__c;
                     }
                      //Requirmment Type VPN
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('VPN access')){
