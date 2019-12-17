@@ -186,7 +186,8 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: ' + mpEmpDtls.get(inc.Employee__c) + '\n' + 'Department: ' + inc.Department_Emp__c+'\n' 
                         + 'Company: ' + inc.Company__c + '\n' + 'Location: ' + inc.Location__c + '\n' + 'Employee Manager: ' + mpEmpDtls.get(inc.Manager__c) + '\n' 
                         + 'Last Working Day: ' + inc.Last_Working_Day__c + '\n' + 'Additional Information: ' + inc.Additional_Information__c + '\n'
-                        + 'Asset Type: ' + inc.Asset_type__c + '\n' + 'Other allocated asstes?: ' + inc.Other_allocated_assets__c;
+                        + 'Asset Type: ' + inc.Asset_type__c + '\n' + 'Other allocated asstes?: ' + inc.Other_allocated_assets__c + '\n'
+                        + 'Details: ' + inc.Details__c;
 
                     }
                      //Requirmment Type Employee relocation
@@ -194,7 +195,10 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Relocation').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Relocation').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ inc.Employee__c + '\n'+ 'Department: ' + inc.Department_Emp__c + '\n' 
+                        + 'Phone Number: ' + inc.Phone_Number__c + '\n' + 'Relocation Request Type: ' + inc.Relocation_Request_Type__c 
+                        + '\n' + 'Required Action: ' + inc.Required_Action__c + '\n' + 'Current Location: ' + inc.Current_Location__c + '\n' 
+                        + 'Destination Location: ' + inc.Destination_Location__c + '\n' + 'Details: ' + inc.Details__c;
                     }
                      //Requirmment Public website modification
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Public website Modifications')){
