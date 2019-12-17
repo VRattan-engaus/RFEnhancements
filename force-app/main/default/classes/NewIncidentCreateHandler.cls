@@ -195,7 +195,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Relocation').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Relocation').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ inc.Employee__c + '\n'+ 'Department: ' + inc.Department_Emp__c + '\n' 
+                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: '+ mpEmpDtls.get(inc.Employee__c) + '\n'+ 'Department: ' + inc.Department_Emp__c + '\n' 
                         + 'Phone Number: ' + inc.Phone_Number__c + '\n' + 'Relocation Request Type: ' + inc.Relocation_Request_Type__c 
                         + '\n' + 'Required Action: ' + inc.Required_Action__c + '\n' + 'Current Location: ' + inc.Current_Location__c + '\n' 
                         + 'Destination Location: ' + inc.Destination_Location__c + '\n' + 'Details: ' + inc.Details__c;
