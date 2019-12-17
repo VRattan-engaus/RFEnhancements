@@ -221,7 +221,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Hardware').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
                         inc.BMCServiceDesk__incidentDescription__c = 'Hardware Requested: ' + inc.Hardware_Requested_You_may_choose_more__c
-                        + '\n' + 'Details: ' + inc.Details__c + '\n' + 'Business Justification: '
+                        + '\n' + 'Details: ' + inc.Details__c + '\n' + 'Business Justification: ' + inc.Business_Justiication__c
                         + '\n' + 'Additional Information: ' + inc.Additional_Information__c;
                     }
                      //Requirmment Type BI Data Request
@@ -229,7 +229,7 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('BI Data Requests').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('BI Data Request').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Details: ' + inc.Details__c;
                     }
                      //Requirmment Type Global Roaming
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Global Roaming')){
