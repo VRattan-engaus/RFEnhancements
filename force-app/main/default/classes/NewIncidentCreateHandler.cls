@@ -220,7 +220,9 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Hardware Request').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Hardware').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Hardware Requested: ' + inc.Hardware_Requested_You_may_choose_more__c
+                        + '\n' + 'Details: ' + inc.Details__c + '\n' + 'Business Justification: '
+                        + '\n' + 'Additional Information: ' + inc.Additional_Information__c;
                     }
                      //Requirmment Type BI Data Request
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('BI Data request')){
