@@ -212,7 +212,8 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('VPN').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('VPN').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Employee Name: ' + mpEmpDtls.get(inc.employee__c) + '\n' +
+                        'Details: ' + inc.Details__c;
                     }
                      //Requirmment Type New hardware
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('New hardware')){
