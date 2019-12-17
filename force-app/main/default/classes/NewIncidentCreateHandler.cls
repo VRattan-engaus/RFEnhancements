@@ -243,14 +243,14 @@ public with sharing class NewIncidentCreateHandler {
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('General Service Request').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('General Request').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Details: ' + '\n' + inc.Details__c;
                     }
                      //Requirmment Type My request is not in the above list
                     else if((inc.Requirement_Type__c != null) && (inc.Requirement_Type__c).contains('Salesforce Request')){
                         inc.BMCServiceDesk__FKRequestDefinition__c = mpSRDef.get('Salesforce Request').id;
                         inc.BMCServiceDesk__FKCategory__c = mpIncCat.get('Salesforce').Id;
                         System.debug('inc.BMCServiceDesk__FKCategory__c >>' + inc.BMCServiceDesk__FKCategory__c);
-                        inc.BMCServiceDesk__incidentDescription__c = inc.Details__c;
+                        inc.BMCServiceDesk__incidentDescription__c = 'Details: ' + '\n' +inc.Details__c;
                     }
                 }
             }
